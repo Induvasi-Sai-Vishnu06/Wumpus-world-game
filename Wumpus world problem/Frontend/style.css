@@ -1,0 +1,338 @@
+/* 🌍 BODY */
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    font-family: Arial, sans-serif;
+
+    color: white;
+    text-align: center;
+}
+
+/* 🔥 MENU + GAME */
+#menu,
+#game {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* 🎮 MENU PAGE */
+#menu {
+    background: url("image/menu.jpeg") no-repeat center center;
+
+    background-size: contain;
+
+    background-color: black;
+
+    position: relative;
+}
+
+/* 🎮 GAME PAGE */
+#game {
+    background: url("image/game.jpeg") no-repeat center center;
+
+    background-size: cover;
+
+    display: none;
+
+    flex-direction: column;
+    align-items: center;
+
+    overflow: hidden;
+
+    padding-top: 10px;
+
+    position: relative;
+}
+
+/* ❌ HIDDEN */
+.hidden {
+    display: none;
+}
+
+/* 🎮 MENU BUTTONS */
+.menu-buttons {
+    display: flex;
+
+    flex-direction: row;
+
+    gap: 25px;
+
+    position: absolute;
+
+    top: 68%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+/* 🔘 SIDE BUTTONS */
+.menu-btn {
+    padding: 12px 24px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 12px;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    backdrop-filter: blur(4px);
+}
+
+.menu-btn:hover {
+    background: #00bcd4;
+
+    transform: scale(1.08);
+}
+
+/* 🚀 START BUTTON */
+.start-btn {
+    padding: 15px 32px;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 14px;
+
+    background: linear-gradient(45deg, #00e5ff, #0099ff);
+
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.7);
+
+    transition: 0.3s;
+}
+
+.start-btn:hover {
+    transform: scale(1.1);
+
+    box-shadow: 0 0 25px rgba(0, 229, 255, 1);
+}
+
+/* 🧾 STATUS */
+#status {
+    background: rgba(0, 0, 0, 0.6);
+
+    padding: 10px 20px;
+
+    border-radius: 10px;
+
+    margin-top: 10px;
+}
+
+/* 🔲 GRID */
+#grid {
+    display: grid;
+
+    gap: 5px;
+
+    justify-content: center;
+
+    margin-top: 20px;
+}
+
+/* 🧱 CELL */
+.cell {
+    width: 60px;
+    height: 60px;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    border: 1px solid #888;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 20px;
+
+    backdrop-filter: blur(2px);
+}
+
+/* 🧍 PLAYER */
+.player {
+    background: green;
+}
+
+/* 🔘 BUTTON */
+button {
+    margin: 10px;
+}
+
+/* 🏆 SCORE BOARD */
+#scoreBoard {
+    position: absolute;
+
+    left: 20px;
+    top: 100px;
+
+    width: 220px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: rgba(0, 0, 0, 0.7);
+
+    color: white;
+
+    text-align: left;
+
+    backdrop-filter: blur(5px);
+
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+#scoreBoard h3 {
+    text-align: center;
+
+    margin-bottom: 15px;
+
+    color: gold;
+}
+
+#scoreBoard p {
+    font-size: 18px;
+
+    margin: 12px 0;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+
+    .menu-buttons {
+        flex-direction: column;
+        display:flex;
+        gap: 25px;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: 80%;
+    }
+
+    .menu-btn,
+    .start-btn {
+        width: 220px;
+    }
+
+    .cell {
+        width: 45px;
+        height: 45px;
+    }
+
+    #scoreBoard {
+        width: 180px;
+
+        font-size: 14px;
+    }
+}
+/* 🎮 GAME CONTROL BUTTONS (ADDED) */
+/* 🔥 FORCE BUTTONS IN ONE ROW */
+#controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: nowrap; /* 🚨 IMPORTANT: prevents going to next line */
+}
+/* 🎮 COMMON GAME BUTTON STYLE */
+.game-btn {
+    padding: 12px 24px;
+    margin: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    min-width: 120px;
+    white-space: nowrap; /* prevents text breaking */
+    border: none;
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+    backdrop-filter: blur(4px);
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* 🔁 TRY AGAIN */
+.retry {
+    background: linear-gradient(45deg, #ff9800, #ff5722);
+    color: white;
+}
+
+.retry:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px #ff9800;
+}
+
+/* ▶ PLAY AGAIN */
+.play {
+    background: linear-gradient(45deg, #4caf50, #2e7d32);
+    color: white;
+}
+
+.play:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px #4caf50;
+}
+
+/* ❌ QUIT */
+.quit {
+    background: linear-gradient(45deg, #f44336, #b71c1c);
+    color: white;
+}
+
+.quit:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px #f44336;
+}
+
+/* 🔘 CLICK EFFECT */
+.game-btn:active {
+    transform: scale(0.95);
+}
+/* 🎮 Game Controls Container */
+.game-controls {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* 🔴 Quit Button Style */
+#quitGameBtn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* ✨ Hover Effect */
+#quitGameBtn:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}

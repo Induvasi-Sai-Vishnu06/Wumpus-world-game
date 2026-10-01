@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wumpus World</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- MENU -->
+<div id="menu">
+
+    <div class="menu-buttons">
+
+        <button class="menu-btn" onclick="setSize(4)">
+            Easy :)
+        </button>
+
+        <button class="start-btn" onclick="startGame()">
+            Start Game >>
+        </button>
+
+        <button class="menu-btn" onclick="setSize(8)">
+            Hard :(
+        </button>
+
+    </div>
+
+</div>
+
+<!-- GAME -->
+<div id="game">
+    <div class="game-controls">
+    <button onclick="quitGame()" id="quitGameBtn"><< Quit</button>
+    </div>  
+
+    <!-- 🏆 SCORE BOARD -->
+    <div id="scoreBoard">
+
+        <h3>🏆 SCORE BOARD</h3>
+
+        <p>💰 Gold Collected :
+            <span id="goldScore">0</span>
+        </p>
+
+        <p>👣 Moves :
+            <span id="moveScore">0</span>
+        </p>
+
+        <p>⭐ Score :
+            <span id="totalScore">0</span>
+        </p>
+
+    </div>
+
+    <h2 id="status">Game Started!</h2>
+
+    <div id="grid"></div>
+
+    <!-- 🔥 ADDED WRAPPER -->
+    <div id="controls">
+
+        <button id="retryBtn" class="game-btn retry hidden" onclick="initGame()">
+            Try Again >
+        </button>
+
+        <button id="playAgainBtn" class="game-btn play hidden" onclick="initGame()">
+            Play Again >>
+        </button>
+
+        <button id="quitBtn" class="game-btn quit hidden" onclick="goToMenu()">
+            << Quit
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
